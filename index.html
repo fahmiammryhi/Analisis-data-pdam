@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <title>Aplikasi Filter Data PDAM</title>
+</head>
+
+<body class="
+            flex flex-col
+            justify-between
+            item-center
+            p-8
+            min-h-screen
+            bg-gradient-to-r
+            from-green-400
+            to-blue-500
+            text-gray-800
+            md:flex-row
+        ">
+    <main class="bg-white p-16 rounded-lg">
+        <h1 class="text-3xl font-bold mb-8">
+            Unggah File CSV:
+        </h1>
+
+        <form action="{{ url_for('filter_and_predict') }}" method="post" enctype="multipart/form-data"
+            class="flex flex-col">
+            <label for="csv_file" class="mb-2">Unggah File CSV:</label>
+            <input type="file" name="csv_file" accept=".csv" required="required" class="p-4 bg-gray-100 rounded-md" />
+
+            <button type="submit" class="
+                        flex
+                        justify-center
+                        align-center
+                        mt-8
+                        p-4
+                        bg-gradient-to-r
+                        from-green-400
+                        to-blue-500
+                        text-white
+                        rounded-md
+                    ">
+                PROSES PREDIKSI
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-arrow-right ml-4">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </button>
+        </form>
+    </main>
+
+    <section class="mt-8 h-full flex-auto rounded-lg md:mt-0 md:ml-8">
+        <div class="bg-white p-16 rounded-lg">
+            <h1 class="text-2xl mb-8">
+                Filtered Data:
+            </h1>
+            <!-- <h2 class="text-5xl font-bold">{{ prediction }}</h2>
+            {% if (prediction) != '' %}
+            <div class="mt-8"> -->
+            <!-- Display additional details if needed -->
+            <!-- </div> -->
+            <!-- {% endif %} -->
+        </div>
+        <div class="flex justify-between items-center bg-white p-16 rounded-lg mt-8">
+            <!-- <div class="flex items-center"> -->
+            <img class="h-24 md:h-28" src="https://drive.google.com/thumbnail?id=1U664Ihl02fVgBVTvZ1-5kxotHDs-Uomq"
+                alt="logo-it-itts" />
+            <p class="ml-4">Created By: Fahmi Ammry Helmi Irfansyah - 1202200052</p>
+            <!-- </div> -->
+        </div>
+
+    </section>
+
+</body>
+
+</html>
